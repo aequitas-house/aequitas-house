@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aequitas | ASHS House</title>
+<meta name="description" content="Aequitas House — Justice, Peace, Equality, and Action at the Alabama School of Healthcare Sciences.">
+<style>
+:root{--g:#123f2b;--g2:#1d5a3c;--cream:#f7f1df;--paper:#fffaf0;--gold:#c9a84e;--ink:#10251b;--muted:#657269}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+nav{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(247,241,223,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,78,.35)}
+.nav{max-width:1150px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;letter-spacing:.15em;font-size:1.3rem;color:var(--g);text-decoration:none}.logo b{color:var(--gold)}
+.links a{margin-left:20px;color:var(--g);text-decoration:none;font:600 .82rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+.menu{display:none;background:none;border:0;font-size:1.5rem;color:var(--g)}
+.hero{min-height:94vh;display:grid;place-items:center;text-align:center;padding:135px 22px 90px;position:relative;overflow:hidden;background:radial-gradient(circle at 20% 25%,rgba(201,168,78,.18),transparent 25%),radial-gradient(circle at 85% 80%,rgba(29,90,60,.15),transparent 28%),var(--cream)}
+.hero:before,.hero:after{content:"";position:absolute;width:450px;height:450px;border:1px solid rgba(201,168,78,.35);border-radius:50%}.hero:before{left:-260px;top:120px}.hero:after{right:-260px;bottom:-220px}
+.crest{width:105px;height:105px;margin:auto;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:2.5rem;box-shadow:0 0 0 10px rgba(201,168,78,.07)}
+.eyebrow{font:700 .72rem Arial,sans-serif;text-transform:uppercase;letter-spacing:.28em;color:var(--gold)}
+h1{font-size:clamp(4.5rem,13vw,9rem);line-height:.82;color:var(--g);margin:24px 0 18px}
+.hero h2{font-size:clamp(1.15rem,2.6vw,1.75rem);font-weight:400;max-width:760px;margin:auto}.hero p{max-width:680px;color:var(--muted);margin:15px auto}
+.btn{display:inline-block;margin-top:25px;padding:13px 24px;background:var(--g);color:var(--paper);border:1px solid var(--gold);text-decoration:none;font:700 .78rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;transition:.2s}.btn:hover{transform:translateY(-2px);background:var(--g2)}
+section{padding:90px 22px}.wrap{max-width:1100px;margin:auto}.head{text-align:center;max-width:760px;margin:0 auto 45px}.head h2{font-size:clamp(2rem,5vw,3.3rem);line-height:1.05;color:var(--g);margin:10px 0}.head p{color:var(--muted)}
+.values{background:var(--g);color:var(--paper)}.values .head h2,.values .head p{color:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--paper);padding:30px;border-top:4px solid var(--gold);box-shadow:0 15px 35px rgba(18,63,43,.12);transition:.2s}.card:hover{transform:translateY(-5px)}.card h3{color:var(--g);font-size:1.55rem;margin:7px 0}.num{font:700 .72rem Arial,sans-serif;color:var(--gold);letter-spacing:.18em}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.split h2{font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.03;color:var(--g);margin:8px 0 18px}
+.quote{padding:35px;background:var(--paper);border:1px solid rgba(201,168,78,.75);box-shadow:0 15px 35px rgba(18,63,43,.1);font-size:1.25rem;color:var(--g)}
+.pillars{margin-top:25px}.pillar{display:flex;gap:12px;margin:12px 0}.pillar i{color:var(--gold);font-style:normal}
+.constitution{background:var(--g);color:var(--paper)}.constitution .head h2,.constitution .head p{color:var(--paper)}
+.accordion{max-width:850px;margin:auto}.acc{border-top:1px solid rgba(201,168,78,.6)}.acc button{width:100%;padding:20px 5px;background:none;border:0;color:var(--paper);text-align:left;font:bold 1.15rem Georgia;cursor:pointer;display:flex;justify-content:space-between}.acc button span{color:var(--gold)}.panel{display:none;padding:0 5px 20px;color:#e8e1d0}.acc.open .panel{display:block}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{padding:25px;background:var(--paper);border-bottom:3px solid var(--gold)}.step strong{display:block;color:var(--g);font-size:1.1rem;margin-bottom:8px}
+.involved{background:linear-gradient(135deg,var(--cream),#eee2c3)}
+.idea{max-width:850px;margin:auto;text-align:center;padding:42px;background:var(--paper);border:1px solid rgba(201,168,78,.65)}.idea h2{color:var(--g);font-size:2.5rem;margin:0 0 10px}.idea p{color:var(--muted)}
+.cta{padding:75px 22px;text-align:center;background:#0c2d1f;color:var(--paper)}.cta h2{font-size:clamp(2rem,5vw,3.5rem);margin:5px}.cta p{color:#ded6c2}
+footer{padding:25px;text-align:center;background:#081f15;color:#cfc7b1;font:700 .72rem Arial,sans-serif;letter-spacing:.08em}
+.reveal{opacity:0;transform:translateY(18px);transition:.65s}.reveal.show{opacity:1;transform:none}
+@media(max-width:760px){.links{display:none}.menu{display:block}.links.open{display:flex;position:absolute;top:58px;left:0;right:0;background:var(--cream);padding:15px 22px;flex-direction:column}.links.open a{margin:8px 0}.grid,.split{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.hero:before,.hero:after{width:280px;height:280px}}
+
+.events-board{background:#f4efe3;padding:90px 22px}.events-shell{max-width:1100px;margin:auto}
+.events-top{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}.events-top h2{font-size:clamp(2rem,5vw,3.2rem);margin:5px 0}.events-top p{color:var(--muted);max-width:650px}
+.event-btn,.event-form button{border:0;background:#0c2d1f;color:#fff;padding:12px 16px;border-radius:4px;font-weight:700;cursor:pointer}
+.event-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.event-card{background:#fff;border:1px solid #d8d0bd;padding:22px;border-radius:6px}
+.event-date{font:700 .75rem Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#56705f}.event-card h3{margin:7px 0 8px;font-size:1.45rem}.event-meta{font-weight:700;margin:7px 0;color:#183b29}.event-card p{color:var(--muted);line-height:1.65}
+.event-empty{padding:28px;border:1px dashed #bdb5a2;color:var(--muted);background:#fbf8ef}.admin-box{margin-top:28px;padding:24px;background:#0c2d1f;color:#fff;border-radius:6px}.admin-box h3{margin-top:0}
+.event-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}.event-form input,.event-form select,.event-form textarea{width:100%;padding:12px;border:1px solid #bcb5a5;border-radius:4px;font:inherit;box-sizing:border-box}.event-form textarea{min-height:100px}.event-form .full{grid-column:1/-1}.admin-status{margin-top:10px;color:#ded6c2;font-size:.9rem}
+@media(max-width:760px){.events-top{display:block}.event-list,.event-form{grid-template-columns:1fr}.event-form .full{grid-column:auto}}
+
+</style>
+</head>
+<body>
+<nav><div class="nav"><a class="logo" href="#top">AEQUITAS<b>.</b></a><button class="menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button><div class="links">
+<a href="#mission">Mission</a><a href="#values">Values</a><a href="#equality">Equality</a><a href="#constitution">Constitution</a><a href="#events">Events</a><a href="#action">Action</a>
+</div></div></nav>
+
+<header class="hero" id="top">
+<div>
+<div class="crest">A</div>
+<div class="eyebrow" style="margin-top:25px">Alabama School of Healthcare Sciences</div>
+<h1>Aequitas</h1>
+<h2>Justice. Peace. Equality. Action.</h2>
+<p>A house committed to making sure every student at ASHS has a fair opportunity to learn, lead, participate, and be heard.</p>
+<a class="btn" href="#mission">Enter Aequitas</a>
+</div>
+</header>
+
+<section id="mission"><div class="wrap reveal"><div class="head"><div class="eyebrow">Our Mission</div><h2>Equality is more than an idea.</h2><p>Aequitas is here to turn fairness into action across the Alabama School of Healthcare Sciences.</p></div>
+<div class="split"><div><p>We believe a strong school gives every student a meaningful chance to contribute. That means paying attention to who gets opportunities, whose voice is heard, and who may be left out.</p><p>Our goal is not to stand above the ASHS community. It is to work within it and help make the opportunities of this school more equal for everyone.</p><div class="pillars"><div class="pillar"><i>◆</i><span><b>Listen.</b> Make room for student voices.</span></div><div class="pillar"><i>◆</i><span><b>Act.</b> Turn concerns into practical solutions.</span></div><div class="pillar"><i>◆</i><span><b>Include.</b> Help opportunities reach the whole school.</span></div></div></div>
+<div class="quote">“Aequitas does not just believe in equal opportunity. <b>We work to help create it.</b>”</div></div></div></section>
+
+<section class="values" id="values"><div class="wrap reveal"><div class="head"><div class="eyebrow">The Aequitas Standard</div><h2>Three qualities. One purpose.</h2><p>The principles that guide how our house represents ASHS.</p></div>
+<div class="grid"><article class="card"><div class="num">01</div><h3>Justice</h3><p>We stand up when something is unfair and believe students deserve respect, consistency, and a voice.</p></article><article class="card"><div class="num">02</div><h3>Peace</h3><p>We value understanding, respectful disagreement, and a school environment where people can work together.</p></article><article class="card"><div class="num">03</div><h3>Equality</h3><p>We work toward equal opportunities so students can participate, lead, and contribute without being overlooked.</p></article></div></div></section>
+
+<section id="equality"><div class="wrap reveal"><div class="split"><div><div class="eyebrow">Our Responsibility</div><h2>Making opportunity available to everyone.</h2></div><div><p>Aequitas has a unique role at ASHS: helping the school recognize when opportunities are uneven and encouraging solutions that make participation more accessible.</p><p>We want to champion ideas that strengthen the entire school—not just our house.</p></div></div></div></section>
+
+<section class="constitution" id="constitution"><div class="wrap reveal"><div class="head"><div class="eyebrow">The Aequitas Constitution</div><h2>What we stand for.</h2><p>Our principles are meant to guide decisions, not decorate a poster.</p></div>
+<div class="accordion">
+<div class="acc"><button>Article I — Justice <span>+</span></button><div class="panel">Aequitas will advocate for fair treatment and will speak up when students are overlooked or treated inconsistently.</div></div>
+<div class="acc"><button>Article II — Peace <span>+</span></button><div class="panel">Aequitas will promote respectful communication and cooperation, even when students disagree.</div></div>
+<div class="acc"><button>Article III — Equality <span>+</span></button><div class="panel">Aequitas will support equal access to meaningful school opportunities and encourage participation from across the ASHS community.</div></div>
+<div class="acc"><button>Article IV — Action <span>+</span></button><div class="panel">Aequitas will not treat leadership as a title. Ideas should become projects, conversations, and measurable improvements.</div></div>
+</div></div></section>
+
+<section><div class="wrap reveal"><div class="head"><div class="eyebrow">From Principle to Practice</div><h2>How Aequitas can make a difference.</h2><p>A simple cycle for turning student concerns into action.</p></div>
+<div class="timeline"><div class="step"><strong>01 · Listen</strong>Hear student ideas and concerns.</div><div class="step"><strong>02 · Identify</strong>Find where an opportunity or process could be more fair.</div><div class="step"><strong>03 · Act</strong>Work with students and school leadership on realistic solutions.</div><div class="step"><strong>04 · Follow Up</strong>Check whether the change actually helped.</div></div></div></section>
+
+
+<section class="events-board" id="events">
+<div class="events-shell reveal">
+<div class="events-top"><div><div class="eyebrow">Aequitas Live</div><h2>What's happening.</h2><p>Keep up with Aequitas meetings, house events, projects, and important dates.</p></div>
+<button class="event-btn" id="refreshEvents">Refresh Events</button></div>
+<div id="publicEvents" class="event-list"><div class="event-empty">Loading live events…</div></div>
+<div class="admin-box"><div class="eyebrow">House Admin</div><h3>Edit the live events board</h3>
+<p>Use your admin code to publish events. The code is checked by the server and is not stored in this page.</p>
+<form id="eventForm" class="event-form">
+<input id="adminCode" type="password" placeholder="Admin code" required><input id="eventTitle" placeholder="Event name" required>
+<select id="eventVisibility"><option value="public">Public event</option><option value="private">Private event</option></select>
+<input id="eventDate" type="date" required><input id="eventTime" type="time"><input id="eventLocation" placeholder="Location">
+<textarea id="eventDescription" class="full" placeholder="Description"></textarea><button class="full" type="submit">Publish Event</button>
+</form><div id="adminStatus" class="admin-status"></div></div>
+</div></section>
+
+<section class="involved" id="action"><div class="wrap reveal"><div class="idea"><div class="eyebrow">A House That Acts</div><h2>Bring an idea to Aequitas.</h2><p>Have an idea for making ASHS more equal, more peaceful, or more inclusive? This is where ideas should start.</p><a class="btn" href="#events">See Aequitas Events</a></div></div></section>
+
+<div class="cta"><div class="eyebrow">Aequitas House</div><h2>Fairness. Unity. Action.</h2><p>We do not wait for change to happen. We help create a better ASHS together.</p></div>
+<footer>AEQUITAS HOUSE · ALABAMA SCHOOL OF HEALTHCARE SCIENCES · JUSTICE · PEACE · EQUALITY</footer>
+<script>
+document.querySelectorAll('.acc button').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.toggle('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const eventsEl=document.getElementById('publicEvents'),statusEl=document.getElementById('adminStatus');
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const fd=v=>v?new Date(v+'T00:00:00').toLocaleDateString(undefined,{weekday:'short',month:'long',day:'numeric',year:'numeric'}):'';
+async function loadEvents(){try{const r=await fetch('/api/events');if(!r.ok)throw 0;const d=await r.json();
+if(!d.events?.length){eventsEl.innerHTML='<div class="event-empty">No upcoming public events yet.</div>';return;}
+eventsEl.innerHTML=d.events.map(e=>`<article class="event-card"><div class="event-date">${esc(fd(e.date))}</div><h3>${esc(e.title)}</h3>${e.time?`<div class="event-meta">Time: ${esc(e.time)}</div>`:''}${e.location?`<div class="event-meta">Location: ${esc(e.location)}</div>`:''}${e.description?`<p>${esc(e.description)}</p>`:''}</article>`).join('');
+}catch(e){eventsEl.innerHTML='<div class="event-empty">Live events will appear here after the Cloudflare database setup is complete.</div>';}}
+document.getElementById('refreshEvents')?.addEventListener('click',loadEvents);
+document.getElementById('eventForm')?.addEventListener('submit',async e=>{e.preventDefault();statusEl.textContent='Publishing…';
+const b={adminCode:adminCode.value,title:eventTitle.value,visibility:eventVisibility.value,date:eventDate.value,time:eventTime.value,location:eventLocation.value,description:eventDescription.value};
+try{const r=await fetch('/api/admin-events',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});const d=await r.json();if(!r.ok)throw Error(d.error||'Could not publish event');statusEl.textContent='Event published successfully.';e.target.reset();loadEvents();}catch(x){statusEl.textContent=x.message;}});
+loadEvents();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT,title TEXT NOT NULL,date TEXT NOT NULL,time TEXT,location TEXT,description TEXT,visibility TEXT NOT NULL CHECK (visibility IN ('public','private')),created_at TEXT NOT NULL);

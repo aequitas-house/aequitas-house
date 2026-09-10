@@ -1,0 +1,1 @@
+export async function onRequestGet({env}){const {results}=await env.DB.prepare("SELECT id,title,date,time,location,description,visibility FROM events WHERE visibility='public' AND date >= date('now') ORDER BY date ASC,time ASC").all();return Response.json({events:results});}
